@@ -13,10 +13,10 @@ class Features():
         mel_dB = librosa.power_to_db(mel, ref= np.max)
         mel_normalised = librosa.util.normalize(mel_dB)
         print(mel_normalised.shape)
-        if mel_normalised.shape != (128, 147):
+        if mel_normalised.shape != (128, 431):
             print("!!!!!!!!!!!!!!!!!!!!!    NOT SAME SHAPE     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")  #(431 for 5s, 147 for 1.7s)
 
-        mel_path = "/home/issac/PycharmProjects/room_classification/mel/smaller_path_2/5s/"
+        mel_path = "/___ Enter path ___/mel/5s/"
         name = file.split('.')[0]
         np.save(os.path.join(mel_path, name), mel_normalised)
 
@@ -32,13 +32,13 @@ class Features():
         if X_normalised.shape != (1025, 147):
             print("!!!!!!!!!!!!!!!!!!!!!    NOT SAME SHAPE     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
-        fft_path = "/home/issac/PycharmProjects/room_classification/mel/silence/"
+        fft_path = "/___ Enter path ___/mel/silence/"
         name = file.split('.')[0]
         np.save(os.path.join(fft_path, name), X_normalised)
 
     def get_files(self, folder, is_convolved):
         """To open the files and send for operations"""
-        path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/subset/silence/"
+        path = "/___ Enter path ___/mel/silence/"
         if folder == 1:
             branch = os.path.join(path, "DH/")
             filenames = [file for file in os.listdir(branch) if file.endswith(".wav")]
