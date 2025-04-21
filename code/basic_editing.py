@@ -19,7 +19,7 @@ class Plots():
         librosa.display.waveplot(y = audio, sr = samplerate)
         plt.xlabel("Time (in seconds) -->")
         plt.ylabel("Amplitude")
-        save_location = "/home/issac/PycharmProjects/room_classification/dataset_for_students/trial/noise/audio_plot/"
+        save_location = "___ Enter path ___"
         name = file.split('.')[0]
         print(name)
         if folder == 1:
@@ -41,7 +41,7 @@ class Plots():
         plt.grid()
         plt.xlabel("Frequency -->")
         plt.ylabel("Magnitude")
-        save_location = "/home/issac/PycharmProjects/room_classification/dataset_for_students/trial/noise/fft_spectrum/"
+        save_location = "___ Enter path ___"
         if folder == 1:
             path = os.path.join(save_location, "DH/", name)
         elif folder == 2:
@@ -53,7 +53,7 @@ class Plots():
         print("done")
 
     def get_files(self, folder):
-        path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/trial/noise/"
+        path = "___ Enter path ___"
         if folder == 1:
             branch = os.path.join(path, "DH/")
             filenames = [file for file in os.listdir(branch) if file.endswith(".wav")]
