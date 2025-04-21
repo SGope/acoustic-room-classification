@@ -19,12 +19,12 @@ class Features():
         if mel_normalised.shape != (128, 147):
             print("!!!!!!!!!!!!!!!!!!!!!    NOT SAME SHAPE     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")  #(431 for 5s, 147 for 1.7s)
 
-        mel_path = "/home/issac/PycharmProjects/room_classification/mel/Final/Test/brir/"
+        mel_path = "/___ Enter path ___/mel/Final/Test/brir/"
         name = file.split('.')[0]
         np.save(os.path.join(mel_path, name), mel_normalised)
 
         # Saving mel plots as just image for input to LRP
-        fig_path = "/home/issac/PycharmProjects/room_classification/LRP/mel/Final/Test/brir/"
+        fig_path = "/___ Enter path ___/LRP/mel/Final/Test/brir/"
         fig = plt.figure(2)
         img = librosa.display.specshow(mel_normalised, y_axis='mel', x_axis='time')
         # ax.set(title='Mel spectrogram display')
@@ -47,12 +47,12 @@ class Features():
         if X_normalised.shape != (1025, 147):
             print("!!!!!!!!!!!!!!!!!!!!!    NOT SAME SHAPE     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
-        fft_path = "/home/issac/PycharmProjects/room_classification/mel/Final/Test/noise/"
+        fft_path = "/___ Enter path ___/mel/Final/Test/noise/"
         name = file.split('.')[0]
         np.save(os.path.join(fft_path, name), X_normalised)
 
         # Saving mel plots as just image for input to LRP
-        fig_path = "/home/issac/PycharmProjects/room_classification/LRP/mel/Final/Test/noise/"
+        fig_path = "/___ Enter path ___/LRP/mel/Final/Test/noise/"
         fig = plt.figure(2)
         img = librosa.display.specshow(X_normalised, y_axis='fft', x_axis='time')
         # ax.set(title='Mel spectrogram display')
@@ -65,7 +65,7 @@ class Features():
 
     def get_files(self, folder, is_convolved):
         """To open the files and send for operations"""
-        path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/Final/Test/convolved/brir/"
+        path = "/___ Enter path ___/Final/Test/convolved/brir/"
         if folder == 1:
             branch = os.path.join(path, "DH/")
             filenames = [file for file in os.listdir(branch) if file.endswith(".wav")]
