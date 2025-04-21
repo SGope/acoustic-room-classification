@@ -8,7 +8,7 @@ class Subset():
 
     def get_files(self, folder):
         count = 0
-        path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/smaller_path_2/"
+        path = "/___ Enter path ___/smaller_path/"
         if folder == 1:
             branch = os.path.join(path, "DH/")
             filenames = [file for file in os.listdir(branch) if file.endswith(".wav")]
@@ -18,14 +18,6 @@ class Subset():
         else:
             branch = os.path.join(path, "SDM_KEMAR/")
             filenames = [file for file in os.listdir(branch) if file.endswith(".wav")]
-        """
-        #Already did this part
-        for file in filenames:
-            if fnmatch.fnmatch(file, "*_RS_*.wav"):
-                os.remove(os.path.join(branch, file))
-                count += 1
-            #else:
-        """
 
 
         for file in sorted(filenames):
