@@ -25,7 +25,7 @@ def main():
               'shuffle': True}
     max_epochs = 50
 
-    path = "/home/issac/PycharmProjects/room_classification/mel/Final/Train/brir/"
+    path = "/___ Enter path ___/Train/brir/"
     print("----   MAKING LIST  ----")
     feature_dict = dict()
     label_dict = dict()
