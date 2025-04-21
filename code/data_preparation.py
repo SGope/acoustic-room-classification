@@ -8,7 +8,9 @@ class AudioDS(Dataset):
         """
         Function to initialise the dataset
         Args:
-            param1: path: path to the input
+            param1: data: The data (melspectrogram or fft of the audio files depending on input of this training path)
+            param2: labels: The label for the data, in this thesis that is the name of the room
+            param3: path: path to the input
         """
         self.data = data
         self.labels = labels
@@ -27,7 +29,7 @@ class AudioDS(Dataset):
         """
         Function to read the data files and obtain X (data) and Y (labels)
         Args:
-            param1: item: name of the file
+            param1: index: index of the file
         Returns:
             return1: x: The data (melspectrogram or fft of the audio files depending on input of this training path)
             return2: y: The label for the data, in this thesis that is the name of the room
