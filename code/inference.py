@@ -58,7 +58,7 @@ def inference(model, test_dl):
     f1 = f1_score(y_true, y_pred, average='micro')
     print(f'Precision: {precision:.2f}, Recall: {recall:.2f}, and F1 score: {f1:.2f}')
     lines = ['brir: ', f'\nAccuracy: {acc:.2f}, Total items: {total_prediction}', f'\nPrecision: {precision: .2f}, Recall: {recall: .2f}, and F1 score: {f1: .2f}']
-    with open('/home/issac/PycharmProjects/room_classification/training_data/precision.txt', 'w') as f:
+    with open('/___ Enter path ___/training_data/precision.txt', 'w') as f:
         f.writelines(lines)
 
     label = ['H1539b', 'H1562', 'H2505', 'HL', 'HU103', 'LR001', 'ML2-102']
@@ -77,7 +77,7 @@ def inference(model, test_dl):
     ax.set_yticklabels(label)
 
     ## Display the visualization of the Confusion Matrix.
-    plt.savefig("/home/issac/PycharmProjects/room_classification/training_data/cm_percent.png")
+    plt.savefig("/___ Enter path ___/training_data/cm_percent.png")
     plt.clf()
 
     #Confusion matrix in numbers
@@ -93,7 +93,7 @@ def inference(model, test_dl):
     ax.set_yticklabels(label)
 
     ## Display the visualization of the Confusion Matrix.
-    plt.savefig("/home/issac/PycharmProjects/room_classification/training_data/cm_numbers.png")
+    plt.savefig("/___ Enter path ___/training_data/cm_numbers.png")
 
 
 def main():
@@ -107,7 +107,7 @@ def main():
     torch.backends.cudnn.benchmark = True
     myModel = AudioClassifier()
     myModel = myModel.to(device)
-    model_path = "/home/issac/PycharmProjects/room_classification/training_data/saved_model.pth"
+    model_path = "/___ Enter path ___/training_data/saved_model.pth"
     myModel.load_state_dict(torch.load(model_path))
     myModel.eval()
     print(myModel)
@@ -118,7 +118,7 @@ def main():
               'shuffle': True}
     max_epochs = 50
 
-    path = "/home/issac/PycharmProjects/room_classification/mel/Final/Test/brir/"
+    path = "/___ Enter path ___/mel/Final/Test/brir/"
     print("----   MAKING LIST  ----")
     feature_dict = dict()
     label_dict = dict()
