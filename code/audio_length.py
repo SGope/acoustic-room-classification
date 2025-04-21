@@ -18,9 +18,7 @@ class Length():
         Get the file and perform required actions
         """
         length = []
-        path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/trial/"
-        #branch = "/home/issac/PycharmProjects/room_classification/dataset_for_students/trial/audio_for_convolution/"
-        #filenames = [file for file in os.listdir(branch) if file.endswith(".wav")]
+        path = "___ Enter path ___"
 
         if folder == 1:
             branch = os.path.join(path, "DH/")
