@@ -67,20 +67,6 @@ def LRP_individual(model, X, device):
         else:
             R[layer] = R[layer + 1]
 
-    # print("Layer 13 sum", np.sum(R[13].data.numpy()))
-    # print("Layer 12 sum", np.sum(R[12].data.numpy()))
-    # print("Layer 11 sum", np.sum(R[11].data.numpy()))
-    # print("Layer 10 sum", np.sum(R[10].data.numpy()))
-    # print("Layer 9 sum", np.sum(R[9].data.numpy()))
-    # print("Layer 8 sum", np.sum(R[8].data.numpy()))
-    # print("Layer 7 sum", np.sum(R[7].data.numpy()))
-    # print("Layer 6 sum", np.sum(R[6].data.numpy()))
-    # print("Layer 5 sum", np.sum(R[5].data.numpy()))
-    # print("Layer 4 sum", np.sum(R[4].data.numpy()))
-    # print("Layer 3 sum", np.sum(R[3].data.numpy()))
-    # print("Layer 2 sum", np.sum(R[2].data.numpy()))
-    # print("Layer 1 sum", np.sum(R[1].data.numpy()))
-    # Return relevance of input layer
     return R[0]
 
 def newlayer(layer, g, flag):
@@ -106,16 +92,12 @@ def lrp(filename):
     # Create model and load saved model in evaluation mode
     myModel = AudioClassifier()
     myModel = myModel.to(device)
-    model_path = "/home/issac/PycharmProjects/room_classification/training_data/saved_model.pth"
+    model_path = "/___ Enter path ___/training_data/saved_model.pth"
     myModel.load_state_dict(torch.load(model_path))
     myModel.eval()
 
-    """
-    file_path = "/home/issac/PycharmProjects/room_classification/mel/smaller_path_2/1.7s/BRIR_DH_H1539b_E_LS_000_Claps.npy"
-    item = np.load(file_path, allow_pickle=True)
-    """
 
-    path = "/home/issac/PycharmProjects/room_classification/mel/Final/Train/noise/"
+    path = "/___ Enter path ___/mel/Final/Train/noise/"
     # print("----   MAKING LIST  ----")
     feature_dict = dict()
     label_dict = dict()
@@ -150,7 +132,7 @@ def lrp(filename):
     #cax = divider.append_axes("right", size="5%", pad=0.05)
     #cbar_ax = fig.add_axes([0.85, 0.15, 0.05, 0.7])
     fig.colorbar(im)
-    fig_path = "/home/issac/PycharmProjects/room_classification/LRP/relevance/Final/Train/noise/"
+    fig_path = "/___ Enter path ___/LRP/relevance/Final/Train/noise/"
     name = filename.split('.')[0]
     fig.delaxes(fig.axes[1])
     plt.axis('off')
@@ -160,7 +142,7 @@ def lrp(filename):
     #plt.show()
 
 def main():
-    path = "/home/issac/PycharmProjects/room_classification/mel/Final/Train/noise/"
+    path = "/___ Enter path ___/mel/Final/Train/noise/"
     filenames = [file for file in os.listdir(path) if file.endswith(".npy")]
     for index, file in enumerate(sorted(filenames)):
         lrp(file)
