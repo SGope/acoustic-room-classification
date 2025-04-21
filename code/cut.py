@@ -9,7 +9,7 @@ class Cut():
         audio = audio.set_frame_rate(44100)
         pad_ms = 1.7 * 1000  # keeping length at 1.7s
 
-        path = "___ Enter path ___"
+        path = "/___ Enter path ___/"
 
         if pad_ms < len(audio):
             cut_audio = audio[:pad_ms]
@@ -18,7 +18,7 @@ class Cut():
 
     def get_files(self):
         """To get files for processing"""
-        path = "___ Enter path ___"
+        path = "/___ Enter path ___/"
         filenames = [file for file in os.listdir(path) if file.endswith(".wav")]
         print("Current folder is: ", path)
 
