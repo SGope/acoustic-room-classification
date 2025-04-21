@@ -2,9 +2,9 @@ import os
 import cv2
 
 def main():
-    mask_path = "/home/issac/PycharmProjects/room_classification/LRP/relevance/Final/Train/brir/"
-    img_path = "/home/issac/PycharmProjects/room_classification/LRP/mel/Final/Train/brir/"
-    output_path = "/home/issac/PycharmProjects/room_classification/LRP/output/Final/Train/brir/"
+    mask_path = "/___ Enter path ___/LRP/relevance/Final/Train/brir/"
+    img_path = "/___ Enter path ___/LRP/mel/Final/Train/brir/"
+    output_path = "/___ Enter path ___/LRP/output/Final/Train/brir/"
     filenames = [file for file in os.listdir(mask_path) if file.endswith(".png")]
     for file in sorted(filenames):
         img1 = cv2.imread(os.path.join(img_path, file))
