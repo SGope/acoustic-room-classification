@@ -112,7 +112,7 @@ def training(model, train_dl, val_dl, num_epochs):
             print(f'Validation Loss Decreased({min_valid_loss:.6f}--->{avg_val_loss:.6f}) \t Saving The Model')
             min_valid_loss = avg_val_loss
             # Saving State Dict
-            torch.save(model.state_dict(), '/home/issac/PycharmProjects/room_classification/training_data/saved_model.pth')
+            torch.save(model.state_dict(), '/___ Enter path ___/training_data/saved_model.pth')
 
 
     plt.figure(1, figsize=(10, 5))
@@ -123,7 +123,7 @@ def training(model, train_dl, val_dl, num_epochs):
     plt.xlabel("Epochs")
     plt.ylabel("Accuracy")
     plt.legend()
-    plt.savefig("/home/issac/PycharmProjects/room_classification/training_data/accuracy.png")
+    plt.savefig("/___ Enter path ___/training_data/accuracy.png")
 
     plt.figure(2, figsize=(10, 5))
     plt.title("Training and Validation Loss")
@@ -132,7 +132,7 @@ def training(model, train_dl, val_dl, num_epochs):
     plt.xlabel("Epochs")
     plt.ylabel("Loss")
     plt.legend()
-    plt.savefig("/home/issac/PycharmProjects/room_classification/training_data/loss.png")
+    plt.savefig("/___ Enter path ___/training_data/loss.png")
     #plt.show()
 
     print("Finished Training")
