@@ -17,7 +17,7 @@ class Spectrogram():
         plt.xlabel("Time (in seconds) -->")
         plt.ylabel("Frequency (Hz) in linear scale")
         plt.title(file)
-        save_location = "/home/issac/PycharmProjects/room_classification/dataset_for_students/trial/noise_2/spectrogram/"
+        save_location = "/___ Enter path ___/spectrogram/"
         name = file.split('.')[0]
         if folder == 1:
             path = os.path.join(save_location, "DH/", name)
@@ -31,7 +31,7 @@ class Spectrogram():
 
     def get_files(self, folder):
         """To get files for processing"""
-        path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/trial/noise_2/"
+        path = "/___ Enter path ___/"
         if folder == 1:
             branch = os.path.join(path, "DH/")
             filenames = [file for file in os.listdir(branch) if file.endswith(".wav")]
