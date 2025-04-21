@@ -7,9 +7,9 @@ class Cut():
         print(file)
         audio = AudioSegment.from_wav(os.path.join(branch, file))
         audio = audio.set_frame_rate(44100)
-        pad_ms = 5.0 * 1000  # keeping length at 1.7s for now, later found the wall position of 1562 has info at 2s
+        pad_ms = 1.7 * 1000  # keeping length at 1.7s
 
-        path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/Final/Test/convolved/brir_5s/DH/"
+        path = "___ Enter path ___"
 
         if pad_ms < len(audio):
             cut_audio = audio[:pad_ms]
@@ -18,7 +18,7 @@ class Cut():
 
     def get_files(self):
         """To get files for processing"""
-        path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/Final/Test/convolved/brir_uncut/DH/"
+        path = "___ Enter path ___"
         filenames = [file for file in os.listdir(path) if file.endswith(".wav")]
         print("Current folder is: ", path)
 
