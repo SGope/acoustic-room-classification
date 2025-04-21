@@ -123,11 +123,11 @@ def convolution_reverb(audio_file, ir_file, output_file):
 class Convole():
     def convolve_audio(self, file, branch, folder):
         """Convolve the audio clip with the impulse"""
-        audio_path = "___ Enter path ___"
+        audio_path = "/___ Enter path ___/audio_for_convolution/uncut/"
         print(file)
         ir_wave = os.path.join(branch, file)
         audio_files = [filename for filename in os.listdir(audio_path) if filename.endswith(".wav")]
-        output_path = "___ Enter path ___"
+        output_path = "/___ Enter path ___/Test/convolved/brir_uncut/"
         if folder == 1:
             branch = os.path.join(output_path, "DH/")
         elif folder == 2:
@@ -148,7 +148,7 @@ class Convole():
 
     def get_files(self, folder):
         """To get files for processing"""
-        path = "___ Enter path ___"
+        path = "/___ Enter path ___/Test/"
         if folder == 1:
             branch = os.path.join(path, "DH/")
             filenames = [file for file in os.listdir(branch) if file.endswith(".wav")]
