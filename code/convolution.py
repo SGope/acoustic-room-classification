@@ -1,7 +1,5 @@
 import os
 import librosa
-
-
 import numpy as np
 from wave import open
 import soundfile
@@ -117,22 +115,19 @@ def convolution_reverb(audio_file, ir_file, output_file):
 
     convolution = audio_spectrum * ir_spectrum
     wave = convolution.make_wave()
-    #print("Shape of wav: ", len(wave))
     wave.write(output_file)
 
-
-#convolution_reverb('audio.wav', 'ir.wav', 'result.wav')
 
 
 
 class Convole():
     def convolve_audio(self, file, branch, folder):
         """Convolve the audio clip with the impulse"""
-        audio_path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/trial/audio_for_convolution/uncut/"
+        audio_path = "___ Enter path ___"
         print(file)
         ir_wave = os.path.join(branch, file)
         audio_files = [filename for filename in os.listdir(audio_path) if filename.endswith(".wav")]
-        output_path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/Final/Test/convolved/brir_uncut/"
+        output_path = "___ Enter path ___"
         if folder == 1:
             branch = os.path.join(output_path, "DH/")
         elif folder == 2:
@@ -153,7 +148,7 @@ class Convole():
 
     def get_files(self, folder):
         """To get files for processing"""
-        path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/Final/Test/"
+        path = "___ Enter path ___"
         if folder == 1:
             branch = os.path.join(path, "DH/")
             filenames = [file for file in os.listdir(branch) if file.endswith(".wav")]
