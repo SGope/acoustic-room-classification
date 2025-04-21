@@ -13,7 +13,7 @@ class Padding():
         audio = audio.set_frame_rate(44100)
         pad_ms = 1.7 * 1000           #keeping length at 1.7s for now, later found the wall position of 1562 has info at 2s
 
-        path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/subset/silence/"
+        path = "/___ Enter path ___/silence/"
         if folder == 1:
             branch = os.path.join(path, "DH/")
         elif folder == 2:
@@ -37,7 +37,7 @@ class Padding():
         audio = audio.set_frame_rate(44100)
         pad_ms = 1.7 * 1000           #keeping length at 1.7s for now, later found the wall position of 1562 has info at 2s
 
-        path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/Final/Test/noise/"
+        path = "/___ Enter path ___/noise/"
         if folder == 1:
             branch = os.path.join(path, "DH/")
         elif folder == 2:
@@ -45,22 +45,7 @@ class Padding():
         else:
             branch = os.path.join(path, "SDM_KEMAR/")
 
-        """
-        #assert pad_ms > len(audio), "Audio was longer that 1 second. Path: " + str(os.path.join(branch, file))
-        if pad_ms > len(audio):
-            white_noise = WhiteNoise().to_audio_segment(duration=pad_ms - len(audio))
-            a_audio = audio[-100:].dBFS
-            a_noise = white_noise.dBFS
-            a_change = a_audio - a_noise
-            print(len(white_noise))
-            final_noise = white_noise.apply_gain(a_change)
-            print(len(final_noise))
-            extended_audio = audio + final_noise    # Adding noise after the audio
-            extended_audio.export(os.path.join(branch, file), format='wav')
-        else:
-            cut_audio = audio[:pad_ms]
-            cut_audio.export(os.path.join(branch, file), format='wav')
-        """
+        
         if pad_ms > len(audio):
             extended_audio = audio
             while pad_ms > len(extended_audio):
@@ -77,7 +62,7 @@ class Padding():
 
     def get_files(self, folder, is_silent):
         """To open the files and send for operations"""
-        path = "/home/issac/PycharmProjects/room_classification/dataset_for_students/subset/"
+        path = "/___ Enter path ___/"
         if folder == 1:
             branch = os.path.join(path, "DH/")
             filenames = [file for file in os.listdir(branch) if file.endswith(".wav")]
